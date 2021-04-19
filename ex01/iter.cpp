@@ -8,12 +8,9 @@ void	iter(const T* tab, size_t len, void (* func)(const T&)) {
 	}
 }
 
-void	print_string(const std::string & str) {
-	std::cout << str << "\n";
-}
-
-void	print_int(const int & i) {
-	std::cout << i << "\n";
+template <typename T>
+void	print_item(const T& item) {
+	std::cout << item << "\n";
 }
 
 int	main() {
@@ -21,7 +18,7 @@ int	main() {
 					"Grapefruit", "Pineapple", "Blueberries", "Apple", "Mango"};
 	int			numbers[] = {4, 8, 15, 16, 23, 42};
 
-	::iter(fruits, sizeof(fruits) / sizeof(fruits[0]), &print_string);
+	::iter(fruits, sizeof(fruits) / sizeof(fruits[0]), &print_item);
 	std::cout << "\n";
-	::iter(numbers, sizeof(numbers) / sizeof(numbers[0]), &print_int);
+	::iter(numbers, sizeof(numbers) / sizeof(numbers[0]), &print_item);
 }

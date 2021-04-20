@@ -48,6 +48,10 @@ void	test_array(T assign_value) {
 		Array<T> zero_size_array(0);
 		test_invalid_index(
 						zero_size_array, zero_size_array.size(), assign_value);
+
+		Array<T>  no_param_array;
+		test_invalid_index(
+						no_param_array, no_param_array.size(), assign_value);
 		std::cout << "\n";
 }
 

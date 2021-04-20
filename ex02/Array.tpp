@@ -16,8 +16,8 @@ class Array {
 	unsigned int	size() const;
 
  private:
-	T				*_data;
 	unsigned int	_size;
+	T				*_data;
 };
 
 template <typename T>
@@ -25,11 +25,8 @@ Array<T>::Array() : _size(0), _data(0) {
 }
 
 template <typename T>
-Array<T>::Array(unsigned int n) : _size(n),{
-									_data(_size ? new T[_size] : 0) {
-	for (unsigned int i = 0; i < _size; i++) {
-		_data[i] = T {};
-	}
+Array<T>::Array(unsigned int n) : _size(n),
+									_data(_size ? new T[_size]() : 0) {
 }
 
 template <typename T>
